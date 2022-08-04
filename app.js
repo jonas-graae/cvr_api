@@ -4,6 +4,7 @@ const getCVR = async (country='dk') => {
 
     if (response.status === 200) {
         const data = response.json();
+        console.log(data);
         return data;
     } else {
         throw new Error("Unable to fetch cvr data"); 
@@ -17,7 +18,8 @@ function renderCVR() {
         let html = `
             <p>${data.name}</p>
             <p>${data.address}</p>
-            <p>${data.zipcode}, ${data.city}</p>`;
+            <p>${data.zipcode}, ${data.city}</p>
+            <p>contact-mail ${data.email}`;
         document.querySelector('.cvr-info').insertAdjacentHTML('afterbegin', html)
     })
 }
