@@ -16,7 +16,7 @@ function renderCVR() {
     .then(data => {
         console.log(data)
         let html = `
-            <p>${data.name}</p>
+            <p class="green">${data.name}</p>
             <p>${data.address}</p>
             <p>${data.zipcode}, ${data.city}</p>
             <p>contact-mail ${data.email}`;
